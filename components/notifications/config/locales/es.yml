@@ -1,0 +1,7 @@
+es:
+  signup_notifier:
+    confirm:
+      subject: "%{name}, confirma tu cuenta en Flow"
+      header: Bienvenido a Flow, %{name}!
+      body: Para confirmar tu cuenta, simplemente has de hacer click en este link:
+      footer: Muchas gracias, el equipo de Flow.

@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title="#{@title}"
+    %meta{name: 'description', content: @description}
+    = csrf_meta_tags
+    = stylesheet_link_tag    'public/application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'public/application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'semantic.css'
+    = javascript_include_tag 'jquery.js'
+    = javascript_include_tag 'semantic.js'
+  %body
+    .background
+    %p.notice= notice
+    %p.alert= alert
+    %div.ui.container{style: 'height: 100%;'}
+      = yield

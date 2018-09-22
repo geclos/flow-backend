@@ -1,0 +1,33 @@
+@import 'public/global/colors';
+@import 'public/global/fonts';
+
+body {
+  background-color: $grey5;
+}
+
+.container {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid $grey4;
+  width: 765px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.headerTable {
+  width: 100%;
+
+  td {
+    text-align: center;
+
+    .logo {
+      font-size: 5em;
+      margin: 0;
+    }
+  }
+}
+
+.paragraphTable {
+  @include font-size(4);
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}

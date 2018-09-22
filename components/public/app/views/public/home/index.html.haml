@@ -1,0 +1,14 @@
+.ui.grid{style: 'height: 100%;'}
+
+  = render 'public/shared/header'
+
+  .row.two.column{style: 'align-self: flex-start;'}
+    .seven.wide.column.middle.aligned
+      %h1
+        =I18n.t('home.index.claim')
+      %h2.muted.thin
+        =I18n.t('home.index.subclaim')
+    .seven.wide.column.middle.aligned.right.floated
+      .ui.left.aligned.segment
+        .ui.large.form
+          = render 'public/shared/signup_form', signup: @signup

@@ -1,0 +1,33 @@
+es:
+  activerecord:
+    attributes:
+      signup:
+        first_name: Nombre
+        last_name: Apellidos
+        email: Email
+    errors:
+      models:
+        signup:
+          attributes:
+            first_name:
+              blank: El nombre está en blanco
+            last_name:
+              blank: El apellido está en blanco
+            email:
+              blank: El email está en blanco
+              taken: Ya existe una cuenta con este email
+  home:
+    index:
+      claim: Mide la inovación en tu organización
+      subclaim: El iFlow Business Transformation framework es la herramienta para medir la capacidad real de tu organización para superar el dilema del innovador
+      signup_form:
+        placeholders:
+          first_name: Nombre
+          last_name: Apellidos
+          email: Email
+        cta: Empieza a utilizar Flow
+  onboarding:
+    confirm:
+      email_sent:
+        title: Tienes un nuevo email
+        description: Te hemos enviado un correo electrónico de confirmación a tu cuenta %{email}, haz click en el link incluido allí.

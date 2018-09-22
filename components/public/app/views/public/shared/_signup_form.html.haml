@@ -1,0 +1,15 @@
+- base = "home.index.signup_form"
+- secure_url = create_signup_url(signup)
+= form_for signup, url: secure_url do |f|
+  .field
+    = f.label :first_name
+    = f.text_field :first_name, autofocus: true, placeholder: t("#{base}.placeholders.first_name")
+  .field
+    = f.label :last_name
+    = f.text_field :last_name, placeholder: t("#{base}.placeholders.last_name")
+
+  .field
+    = f.label :email
+    = f.text_field :email, { placeholder: t("#{base}.placeholders.email") }
+
+  = f.submit t("#{base}.cta"), class: 'ui fluid large teal submit button'

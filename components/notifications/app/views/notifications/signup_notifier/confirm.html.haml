@@ -1,7 +1,7 @@
 - root = 'notifications/shared'
 = render partial: "#{root}/header"
-= render partial: "#{root}/paragraph", locals: { content: t("signup_notifier.confirm.header", name: name) }
+= render partial: "#{root}/paragraph", locals: { content: t("signup_notifier.confirm.header", name: @signup.first_name) }
 = render partial: "#{root}/paragraph", locals: { content: t("signup_notifier.confirm.body") }
 = render partial: "#{root}/br"
-= link_to public.confirm_signup_url(token: confirmation_token)
-= render partial: "#{root}/br"
+= link_to public.confirm_signup_url(token: @signup.confirmation_token), public.confirm_signup_url(token: @signup.confirmation_token), { target: '_blank' }
+= render partial: "#{root}/footer"

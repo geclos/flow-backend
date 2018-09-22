@@ -5,6 +5,11 @@ es:
         first_name: Nombre
         last_name: Apellidos
         email: Email
+      company:
+        name: Nombre de la compañía
+        country: País
+        sector: Sector
+        size: Tamaño
     errors:
       models:
         signup:
@@ -30,4 +35,16 @@ es:
     confirm:
       email_sent:
         title: Tienes un nuevo email
-        description: Te hemos enviado un correo electrónico de confirmación a tu cuenta %{email}, haz click en el link incluido allí.
+        description: "Te hemos enviado un correo electrónico de confirmación a tu cuenta <strong>%{email}</strong>."
+    confirm_signup:
+      confirm_signup_form:
+        placeholders:
+          password: Password
+          name: Nombre
+          country: País
+          sector: Sector
+          size: Tamaño
+        cta: Finalizar registro
+    finalized:
+      title: ¡Muchas gracias!
+      description: Muy pronto podrás analizar el estado de innovación en tu empresa. Te enviaremos un correo electrónico tan pronto como estemos listos para acogerte.

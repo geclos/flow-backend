@@ -1,6 +1,5 @@
 - base = "home.index.signup_form"
-- secure_url = create_signup_url(signup)
-= form_for signup, url: secure_url do |f|
+= form_for signup, url: create_signup_url(signup) do |f|
   .field
     = f.label :first_name
     = f.text_field :first_name, autofocus: true, placeholder: t("#{base}.placeholders.first_name")

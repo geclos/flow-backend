@@ -2,7 +2,10 @@
 @import 'public/global/fonts';
 
 body {
+  @include font-size(4);
   background-color: $grey5;
+  color: $grey1;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -11,7 +14,7 @@ body {
   border: 1px solid $grey4;
   width: 765px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 50px 30px 30px;
 }
 
 .headerTable {
@@ -22,12 +25,7 @@ body {
 
     .logo {
       font-size: 5em;
-      margin: 0;
+      margin-top: 0;
     }
   }
-}
-
-.paragraphTable {
-  @include font-size(4);
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }

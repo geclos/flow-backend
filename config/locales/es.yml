@@ -1,0 +1,6 @@
+---
+es:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'La validación falló: %{errors}'

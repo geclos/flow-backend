@@ -1,4 +1,10 @@
-.ui.grid.middle.aligned{style: 'height: 100%'}
-  .column
-    .ui.segment
-      %h3=I18n.t('public.onboarding.confirm.email_sent', email: @email)
+.ui.grid{style: 'height: 100%;'}
+  = render 'public/shared/header', login: false
+
+  .row.one.column.centered{style: 'align-self: flex-start;'}
+    .seven.wide.column
+      .ui.segment.center.aligned
+        .ui.header
+          %h1=I18n.t('onboarding.confirm.email_sent.title')
+        .ui.content
+          %p.thin=I18n.t('onboarding.confirm.email_sent.description', email: @email).html_safe

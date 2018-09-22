@@ -8,3 +8,8 @@
   height: 100%;
   background: linear-gradient(-30deg, $brand 0%, $brand 45%, transparent 45%);
 }
+
+.ui.dropdown.selection.disabled {
+  color: $grey1;
+  background: $grey4;
+}

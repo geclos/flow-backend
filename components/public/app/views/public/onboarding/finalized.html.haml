@@ -1,1 +1,8 @@
--# TODO: 
+- base = "onboarding.finalized"
+.ui.grid.middle.aligned{style: 'height: 100%; justify-content: center;'}
+  .seven.wide.column
+    .ui.segment.center.aligned
+      .ui.header
+        %h1=I18n.t("#{base}.title")
+      .ui.content
+        %p.thin=I18n.t("#{base}.description")

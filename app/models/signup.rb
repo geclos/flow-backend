@@ -6,6 +6,10 @@ class Signup < ApplicationRecord
   # =========
   before_create :set_confirmation_token
 
+  # RELATIONS
+  # =========
+  belongs_to :user, optional: true
+
   # VALIDATIONS
   # ===========
   validates :first_name, :last_name, :email, presence: true

@@ -1,1 +1,31 @@
--# TODO: 
+- base = "onboarding.confirm_signup.confirm_signup_form"
+.ui.grid.middle.aligned{style: 'height: 100%; justify-content: center;'}
+  .seven.wide.column
+    .ui.segment
+      .ui.large.form
+        = form_for @company, url: finalize_signup_url(token: @signup.confirmation_token) do |f|
+          .field
+            = f.label :password
+            = f.password_field :password, autofocus: true, placeholder: t("#{base}.placeholders.password")
+          .ui.divider
+          .field
+            = f.label :name
+            = f.text_field :name, placeholder: t("#{base}.placeholders.name")
+          .field
+            - countries = [['España', 'es']]
+            = f.label :country
+            = f.select :country, countries, { include_blank: '-- Choose --', selected: 'es' }, { class: 'ui dropdown', placeholder: t("#{base}.placeholders.country") }
+          .field
+            - sectors = [["Tecnologias de la información", "information_technology"]]
+            = f.label :sector
+            = f.select :sector, sectors, { include_blank: '-- Choose --' }, { class: 'ui dropdown', placeholder: t("#{base}.placeholders.sector") }
+          .field
+            - sizes = [["1-10", "small"], ['11-50', 'medium'], ['51-200', 'large'], ['+200', 'huge']]
+            = f.label :size
+            = f.select :size, sizes, { include_blank: '-- Choose --' }, { class: 'ui dropdown', placeholder: t("#{base}.placeholders.size") }
+
+          = f.submit t("#{base}.cta"), class: 'ui fluid large teal submit button'
+
+
+:javascript
+  $('.ui.dropdown').dropdown()

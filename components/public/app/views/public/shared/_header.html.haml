@@ -2,5 +2,6 @@
   .middle.aligned.column
     %h3.ui.header
       Flow
-  .right.aligned.column
-    = link_to 'Login', '', class: 'ui basic teal button' # TODO: add link to login page
+  - if login
+    .right.aligned.column
+      = link_to 'Login', '', class: 'ui basic teal button' # TODO: add link to login page

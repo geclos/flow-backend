@@ -20,6 +20,10 @@ $line_heights: $line-height-h1 $line-height-h2 $line-height-h3 $line-height-h4 $
   line-height: nth($line_heights, $size);
 }
 
+p {
+  @include font-size(4);
+}
+
 .muted {
   color: $grey3;
 }

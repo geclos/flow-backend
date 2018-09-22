@@ -19,7 +19,7 @@ module SignupInteractor
     private
 
     def send_confirmation_email!
-      ::Notifications::SignupNotifier.confirm(signup)
+      ::Notifications::SignupNotifier.confirm(signup).deliver_later!
     end
   end
 end

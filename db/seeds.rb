@@ -27,5 +27,6 @@ Signup.create!(
   email: 'paco@merlo.com',
   first_name: 'Paco',
   last_name: 'Merlo',
+  host: 'localhost:3000',
   user: user
 )

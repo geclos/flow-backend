@@ -5,7 +5,7 @@ module Public
 
     def create_signup
       signup = SignupInteractor::Create.new(
-        params: signup_params
+        params: signup_params.merge(host: request.host)
       ).call
 
       return redirect_to confirm_url(email: signup.email) if signup.valid?

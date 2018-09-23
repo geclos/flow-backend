@@ -59,6 +59,7 @@ group :development do
 
   gem "letter_opener"
   gem 'letter_opener_web', '~> 1.0'
+  gem "capistrano", "~> 3.11", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

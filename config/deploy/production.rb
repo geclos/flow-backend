@@ -15,8 +15,8 @@ server "flow.production", user: "deploy", roles: %w{app web}
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
-append :linked_files, "config/database.yml"
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
+set :linked_files, %w{config/database.yml}
 
 # Puma config
 set :puma_threads,    [4, 16]

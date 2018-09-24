@@ -60,7 +60,7 @@ Rails.application.configure do
     address:              'smtp.mailgun.org',
     port:                 587,
     domain:               'iflowframework.com',
-    user_name:            'hello@mg.iflowframework.com',
+    user_name:            'postmaster@mg.iflowframework.com',
     password:             ENV['MAILGUN_PASSWORD'],
     api_key:              ENV['MAILGUN_API_KEY'],
     api_domain:           'mg.iflowframework.com',

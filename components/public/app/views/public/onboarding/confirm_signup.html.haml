@@ -16,9 +16,8 @@
             = f.label :country
             = f.select :country, countries, { include_blank: '-- Choose --', selected: 'es' }, { class: 'ui dropdown', placeholder: t("#{base}.placeholders.country") }
           .field
-            - sectors = [["Tecnologias de la información", "information_technology"]]
             = f.label :sector
-            = f.select :sector, sectors, { include_blank: '-- Choose --' }, { class: 'ui dropdown', placeholder: t("#{base}.placeholders.sector") }
+            = f.select :sector, @sectors, { include_blank: '-- Choose --' }, { class: 'ui dropdown', placeholder: t("#{base}.placeholders.sector") }
           .field
             - sizes = [["1-10", "small"], ['11-50', 'medium'], ['51-200', 'large'], ['+200', 'huge']]
             = f.label :size

@@ -5,7 +5,7 @@ module Public
 
     def create_signup
       signup = SignupInteractor::Create.new(
-        params: signup_params.merge(host: ENV['APP_DOMAIN'])
+        params: signup_params.merge(host: ENV['APP_DOMAIN'] || request.host)
       ).call
 
       return redirect_to confirm_url(email: signup.email) if signup.valid?
@@ -20,6 +20,21 @@ module Public
 
     def confirm_signup
       @company = Company.new
+      # TODO: sacrilegio!
+      @sectors = [
+        ["Bienes de consumo", "consumer"],
+        ["Comercio electrónico", "ecommerce"],
+        ["Construcción", "construction"],
+        ["Deporte y ocio", "sports_leisure"],
+        ["Energía y medio ambiente", "energy"],
+        ["Finanzas / seguros", "finance_insurance"],
+        ["Logística y transporte", "logistics"],
+        ["Marketing", "marketing"],
+        ["Salud e industria farmacéutica", "health_farma"],
+        ["Tecnologias de la información", "information_technology"],
+        ["Turismo", "turism"],
+        ["Otros", "other"]
+      ]
     end
 
     def finalize_signup

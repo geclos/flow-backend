@@ -23,6 +23,8 @@ es:
               taken: Ya existe una cuenta con este email
   home:
     index:
+      title: Flow
+      description: Crea el entorno para la innovación en tu organización
       claim: Mide la inovación en tu organización
       subclaim: El iFlow Business Transformation framework es la herramienta para medir la capacidad real de tu organización para superar el dilema del innovador
       signup_form:

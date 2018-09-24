@@ -53,7 +53,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
-  config.active_job.queue_adapter     = :sidekiq
+  # config.active_job.queue_adapter     = :sidekiq
   # config.active_job.queue_name_prefix = "flow-backend_#{Rails.env}"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

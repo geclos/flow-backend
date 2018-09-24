@@ -57,15 +57,13 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "flow-backend_#{Rails.env}"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
+    authentication:       'plain',
     address:              'smtp.mailgun.org',
     port:                 587,
-    domain:               'iflowframework.com',
-    user_name:            'hello@reply.iflowframework.com',
+    domain:               'mg.iflowframework.com',
+    user_name:            'hello@mg.iflowframework.com',
     password:             ENV['MAILGUN_PASSWORD'],
-    api_key:              ENV['MAILGUN_API_KEY'],
-    api_domain:           'reply.iflowframework.com',
-    authentication:       'plain',
-    enable_starttls_auto: true
+    api_key:              ENV['MAILGUN_API_KEY']
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

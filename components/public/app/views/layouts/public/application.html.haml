@@ -1,9 +1,14 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title="#{@title}"
+    %link{rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'}
+    %link{rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'}
+    %link{rel: 'shortcut icon', href: '/favicon.ico'}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{name: 'description', content: @description}
+    %meta{name: 'theme-color', content: '#ffffff'}
+
     = csrf_meta_tags
     = stylesheet_link_tag    'public/application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'public/application', 'data-turbolinks-track': 'reload'

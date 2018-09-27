@@ -2,10 +2,10 @@ en:
   home:
     index:
       claim: Measure innovation in your organization
-      subclaim: The Flow Business Transformation framework is the tool to measure the real time capacity of your organization to overcome the innovator’s dilemma and become more innovative
+      subclaim: The iFlow Business Transformation framework is the tool to measure the real time capacity of your organization to overcome the innovator’s dilemma and become more innovative
       signup_form:
         placeholders:
           first_name: First name
           last_name: Last name
           email: Email
-        cta: Start using Flow
+        cta: Start using iFlow

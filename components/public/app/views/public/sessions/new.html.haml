@@ -1,0 +1,9 @@
+.ui.grid{style: 'height: 100%;'}
+
+  = render 'public/shared/header', login: false
+
+  .row.one.column.centered
+    .seven.wide.column
+      .ui.left.aligned.segment
+        .ui.large.form
+          = render 'public/shared/login_form'

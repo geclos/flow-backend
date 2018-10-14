@@ -7,4 +7,8 @@ Public::Engine.routes.draw do
   get 'confirm_signup/:token', to: 'onboarding#confirm_signup', as: 'confirm_signup'
   post 'confirm_signup/:token', to: 'onboarding#finalize_signup', as: 'finalize_signup'
   get 'finalized/:token', to: 'onboarding#finalized', as: 'finalized'
+
+  get 'login', to: 'sessions#new', as: 'login'
+
+  resources :sessions
 end

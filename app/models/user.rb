@@ -4,6 +4,7 @@ class User < ApplicationRecord
   # CALLBACKS
   # =========
   before_save :encrypt_password
+  before_create :encrypt_password
 
   # RELATIONS
   # =========
@@ -18,7 +19,7 @@ class User < ApplicationRecord
 
   def self.authenticate(email, password)
     user = find_by_email(email)
-    if user && user.encrypted_password == BCrypt::Engine.hash_secret(password, password_salt)
+    if user && user.encrypted_password == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else
       nil

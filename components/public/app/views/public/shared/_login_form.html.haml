@@ -1,0 +1,10 @@
+- base = "home.index.login_form"
+= form_for User.new, url: sessions_url do |f|
+  .field
+    = f.label :email
+    = f.text_field :email, { placeholder: t("#{base}.placeholders.email") }
+  .field
+    = f.label :password
+    = f.password_field :password, { placeholder: t("#{base}.placeholders.password") }
+
+  = f.submit t("#{base}.cta"), class: 'ui fluid large teal submit button'

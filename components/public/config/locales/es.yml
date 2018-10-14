@@ -33,6 +33,11 @@ es:
           last_name: Apellidos
           email: Email
         cta: Empieza a utilizar iFlow
+      login_form:
+        placeholders:
+          email: Email
+          password: Password
+        cta: Entrar en Factorial
   onboarding:
     confirm:
       email_sent:

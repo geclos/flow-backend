@@ -20,7 +20,7 @@ module Public
 
     def confirm_signup
       @company = Company.new
-      # TODO: sacrilegio!
+      # TODO: move to config yml
       @sectors = [
         ["Bienes de consumo", "consumer"],
         ["Comercio electrónico", "ecommerce"],

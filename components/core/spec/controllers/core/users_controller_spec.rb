@@ -1,15 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Core::EmployeesController do
+RSpec.describe Core::UsersController do
   routes { Core::Engine.routes }
 
   let(:user) { create(:user) }
-  let(:employee) { create(:employee, user: user) }
 
   describe 'GET #index' do
     let(:action) { get :index }
 
-    before { employee }
+    before { user }
 
     context 'logged_in' do
       before { session[:user_id] = user.id }

@@ -7,7 +7,7 @@ module Core
       end
 
       def call
-        employee.update_attributes! params
+        @employee.update_attributes! @params
       end
     end
   end

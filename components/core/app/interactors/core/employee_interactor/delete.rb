@@ -6,7 +6,7 @@ module Core
       end
 
       def call
-        employee.destroy!
+        @employee.destroy!
       end
     end
   end

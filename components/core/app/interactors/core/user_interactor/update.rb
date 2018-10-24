@@ -7,7 +7,7 @@ module Core
       end
 
       def call
-        user.update_attributes! params
+        @user.update_attributes! @params
       end
     end
   end

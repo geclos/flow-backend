@@ -6,7 +6,7 @@ module Core
       end
 
       def call
-        user.destroy!
+        @user.destroy!
       end
     end
   end

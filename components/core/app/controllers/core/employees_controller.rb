@@ -8,6 +8,15 @@ module Core
       end.to_json
     end
 
+    def bulk_create
+      EmployeeInteractor::BulkInvite.new(
+        company: current_company,
+        emails: emails
+      ).call
+    rescue ActiveRecord::RecordInvalid => e
+      raise_error(e)
+    end
+
     def update
       employee = EmployeeInteractor::Update.new(
         employee: @employee,
@@ -25,7 +34,7 @@ module Core
       ).call
 
       head :no_content
-    rescue ActiveRecord::RecordInvalid => e
+    rescue ActiveRecord::RecordNotDestroyed => e
       raise_model_errors
     end
 
@@ -39,8 +48,14 @@ module Core
       EmployeesCollection.new(current_user).filter
     end
 
+    def raise_error(e)
+      raise exceptions::UnprocessableEntity.new(
+        e.messages
+      )
+    end
+
     def raise_model_errors
-      raise Exceptions::UnprocessableEntity.new(
+      raise exceptions::UnprocessableEntity.new(
         @employee.errors.messages
       )
     end

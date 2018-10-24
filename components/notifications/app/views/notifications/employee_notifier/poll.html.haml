@@ -1,0 +1,11 @@
+- root = 'notifications/shared'
+- poll_link = ENV['TYPEFORM_LINK'] + "?token=#{@sendee.poll_token}"
+= render partial: "#{root}/header"
+= render partial: "#{root}/paragraph", locals: { content: t("employee_notifier.poll.header") }
+= render partial: "#{root}/paragraph", locals: { content: t("employee_notifier.poll.body_1", sender: @sender.full_name) }
+= render partial: "#{root}/paragraph", locals: { content: t("employee_notifier.poll.body_2", sender: @sender.first_name) }
+= render partial: "#{root}/br"
+= link_to poll_link, poll_link, { target: '_blank' }
+= render partial: "#{root}/br"
+= render partial: "#{root}/paragraph", locals: { content: t("employee_notifier.poll.body_3") }
+= render partial: "#{root}/footer"

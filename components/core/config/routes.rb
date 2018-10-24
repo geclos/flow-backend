@@ -1,4 +1,4 @@
 Core::Engine.routes.draw do
-  resources :users, only: [:update, :delete]
+  resources :users, only: [:index]
   resources :employees
 end

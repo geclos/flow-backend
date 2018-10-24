@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   rescue ActiveRecord::RecordNotFound
     raise Core::Exceptions::Unauthorized
   end
+
+  def current_company
+    @current_company ||= current_user.company
+  end
 end

@@ -7,3 +7,10 @@ es:
       subject: "%{name}, confirma tu cuenta en iFlow"
       header: "Bienvenido a iFlow, %{name}!"
       body: "Para confirmar tu cuenta, simplemente has de hacer click en este link:"
+  employee_notifier:
+    poll:
+      subject: "%{sender} te ha invitado a iFlow"
+      header: "Hola,"
+      body_1: "Has sido invitado a iFlow por %{sender}. iFlow es la herramienta para medir la capacidad real de las organizaciones para superar el dilema del innovador."
+      body_2: "Como parte de este proyecto, %{sender} te pide que rellenes el siguiente formulario dando tu opinión sobre varios aspectos de la organización en la que trabajas."
+      body_3: "<strong>Este formulario es absolutamente anónimo.</strong> Los resultados serán utilizados para hacer un analisis agregado del estado de la inovación en tu organización."

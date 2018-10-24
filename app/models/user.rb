@@ -10,11 +10,11 @@ class User < ApplicationRecord
   # =========
   belongs_to :company
   has_one :signup
+  has_one :employee
 
   # VALIDATIONS
   # ===========
-  validates :first_name, :last_name, :email, presence: true
-  validates :email, uniqueness: true, format: { with: Signup::EMAIL_REGEX }
+  validates :email, presence: true, uniqueness: true, format: { with: Signup::EMAIL_REGEX }
   validates :first_name, :last_name, format: { with: Signup::NAME_REGEX }
 
   def self.authenticate(email, password)
@@ -29,6 +29,12 @@ class User < ApplicationRecord
   def confirmed?
     !!self.confirmed_at
   end
+
+  def full_name
+    @full_name ||= first_name + ' ' + last_name
+  end
+
+  private
 
   def encrypt_password
     if password.present?

@@ -18,7 +18,8 @@ module Core
 
             employee = EmployeeInteractor::Create.new(
               params: {
-                user_id: user.id
+                user_id: user.id,
+                form_sent_at: Date.today # TODO: this is too optimistic, should be updated after employee has been notified.
               }
             ).call
 

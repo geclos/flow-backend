@@ -24,6 +24,7 @@ RSpec.describe Core::EmployeeInteractor::BulkCreate do
         expect(User.count).to eq(4)
         expect(User.all.pluck(:email)).to include('foo@bar.com', 'patata@cocida.com', 'papapa@33.com')
         expect(Core::Employee.count).to eq(3)
+        expect(Core::Employee.first.form_sent_at).to eq(Date.today)
       end
     end
   end

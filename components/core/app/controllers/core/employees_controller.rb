@@ -3,9 +3,10 @@ module Core
     before_action :fetch_employee, only: [:update, :destroy]
 
     def index
-      render json: employees.map do |employee|
-        EmployeePresenter.new(employee)
+      result = employees.map do |employee|
+        EmployeePresenter.new(employee).serialize
       end.to_json
+      render json: result
     end
 
     def bulk_create

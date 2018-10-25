@@ -3,9 +3,11 @@ module Core
     before_action :fetch_user, only: [:update, :destroy]
 
     def index
-      render json: users.map do |user|
-        UserPresenter.new(user)
+      result = users.map do |user|
+        UserPresenter.new(user).serialize
       end.to_json
+
+      render json: result
     end
 
     private

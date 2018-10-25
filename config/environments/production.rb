@@ -63,7 +63,7 @@ Rails.application.configure do
     user_name:            'postmaster@mg.iflowframework.com',
     password:             ENV['MAILGUN_PASSWORD'],
     api_key:              ENV['MAILGUN_API_KEY'],
-    api_domain:           'mg.iflowframework.com',
+    APP_DOMAIN:           'mg.iflowframework.com',
     authentication:       'plain',
     enable_starttls_auto: true
   }

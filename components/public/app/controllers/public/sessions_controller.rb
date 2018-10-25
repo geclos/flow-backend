@@ -7,9 +7,9 @@ module Public
       user = User.authenticate(user_params[:email], user_params[:password])
       if user
         session[:user_id] = user.id
-        redirect_to root_url # TODO: redirect to the app
+        redirect_to ENV['APP_LOCATION']
       else
-        flash.now.alert = "Invalid email or password"
+        flash.now[:error] = "Invalid email or password"
         render :new
       end
     end

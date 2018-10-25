@@ -2,6 +2,11 @@
 
   = render 'public/shared/header', login: false
 
+  - if flash[:error]
+    .row.one.column.centered
+      .seven.wide.center.aligned.column
+        .ui.compact.error.message
+          =flash[:error]
   .row.one.column.centered
     .seven.wide.column
       .ui.left.aligned.segment

@@ -42,6 +42,8 @@ gem 'haml-rails'
 
 gem 'dotenv-rails'
 
+gem 'rack-cors', require: 'rack/cors'
+
 # ===== Sidekiq
 gem 'sidekiq'
 

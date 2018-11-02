@@ -26,7 +26,7 @@ set :puma_workers,    2
 # Custom SSH Options
 # ==================
  set :ssh_options, {
-    keys: %w(~/.ssh/Flow.pem),
+    keys: %w(~/.ssh/id_rsa),
     forward_agent: true,
-    auth_methods: %w(publickey password)
+    auth_methods: %w(publickey)
  }

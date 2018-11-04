@@ -3,7 +3,7 @@ lock "~> 3.11.0"
 
 set :application, "flow-backend"
 set :repo_url, "git@gitlab.com:geclos/flow-backend.git"
-set :deploy_to, '/var/www/flow-backend'
+set :deploy_to, '/srv/app'
 
 # Don't change these unless you know what you're doing
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/puma.sock"

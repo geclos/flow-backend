@@ -15,16 +15,11 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
-## Defaults:
-# set :scm,           :git
-# set :branch,        :master
-# set :format,        :pretty
-# set :log_level,     :debug
-# set :keep_releases, 5
+# rails config
+set :rails_env, fetch(:stage)
 
-## Linked Files & Directories (Default None):
-# set :linked_files, %w{config/database.yml}
-# set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+# bundle configuration
+set :bundle_without, (["development", "test", "staging", "production"] - [fetch(:stage).to_s]).join(" ")
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'

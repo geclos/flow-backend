@@ -10,7 +10,7 @@ module Core
     end
 
     def bulk_create
-      EmployeeInteractor::BulkInvite.new(
+      EmployeeInteractor::BulkCreate.new(
         company: current_company,
         emails: emails
       ).call

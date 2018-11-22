@@ -5,6 +5,7 @@ module Notifications
     def poll(sender, sendee)
       @sender = sender
       @sendee = sendee
+
       mail(
         to: sendee.user.email,
         host: ENV['APP_DOMAIN'],

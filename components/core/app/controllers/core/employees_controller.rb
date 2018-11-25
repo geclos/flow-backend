@@ -41,6 +41,10 @@ module Core
 
     private
 
+    def emails
+      params.permit(:emails)[:emails].split(',')
+    end
+
     def fetch_employee
       @employee = employees.find_by id: params[:id]
     end

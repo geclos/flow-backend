@@ -11,4 +11,5 @@ Public::Engine.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
 
   resources :sessions
+  delete 'sessions' => 'sessions#destroy'
 end

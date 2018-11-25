@@ -16,7 +16,7 @@ module Public
 
     def destroy
       session[:user_id] = nil
-      redirect_to root_url
+      head :no_content
     end
 
     private

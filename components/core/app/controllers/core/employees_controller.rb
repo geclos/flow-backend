@@ -11,6 +11,7 @@ module Core
 
     def bulk_create
       EmployeeInteractor::BulkCreate.new(
+        author: current_user,
         company: current_company,
         emails: emails
       ).call

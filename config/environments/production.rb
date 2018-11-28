@@ -13,7 +13,6 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.action_controller.default_url_options[:protocol] = 'https'
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  default_url_options protocol: :https unless Rails.env.development?
+  unless Rails.env.development?
+    default_url_options protocol: :https
+  end
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 

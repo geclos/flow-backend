@@ -2,6 +2,8 @@ module Public
   class SessionsController < ApplicationController
     def new
       redirect_to ENV['APP_LOCATION'] if current_user
+    rescue Core::Exceptions::Unauthorized
+      # do nothing (rails will render the login template for us)
     end
 
     def create

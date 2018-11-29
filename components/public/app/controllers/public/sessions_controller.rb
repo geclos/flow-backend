@@ -1,6 +1,7 @@
 module Public
   class SessionsController < ApplicationController
     def new
+      redirect_to ENV['APP_LOCATION'] if current_user
     end
 
     def create

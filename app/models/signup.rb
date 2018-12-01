@@ -13,7 +13,7 @@ class Signup < ApplicationRecord
   # VALIDATIONS
   # ===========
   validates :first_name, :last_name, :email, presence: true
-  validates :email, uniqueness: true, format: { with: EMAIL_REGEX }
+  validates :email, uniqueness: true
   validates :first_name, :last_name, format: { with: NAME_REGEX }
 
   def set_confirmation_token

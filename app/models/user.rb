@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   # VALIDATIONS
   # ===========
-  validates :email, presence: true, uniqueness: true, format: { with: Signup::EMAIL_REGEX }
+  validates :email, presence: true, uniqueness: true
   validates :first_name, :last_name, format: { with: Signup::NAME_REGEX }
 
   def self.authenticate(email, password)

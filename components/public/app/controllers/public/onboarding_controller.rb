@@ -56,6 +56,8 @@ module Public
     def finalized
       if !@signup.user || !@signup.user.confirmed?
         redirect_to :finalized_signup, token: @signup.confirmation_token
+      else
+        redirect_to ENV['APP_DOMAIN']
       end
     end
 

@@ -12,6 +12,11 @@ es:
         size: Tamaño
     errors:
       models:
+        user:
+          attributes:
+            email:
+              blank: El email está en blanco
+              taken: Ya existe una cuenta con este email en esta compañía
         signup:
           attributes:
             first_name:

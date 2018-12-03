@@ -44,6 +44,8 @@ gem 'dotenv-rails'
 
 gem 'rack-cors', require: 'rack/cors'
 
+gem 'sentry-raven'
+
 # ===== Sidekiq
 gem 'sidekiq'
 

@@ -4,8 +4,15 @@ PASSWORD='papapa33'
 
 # Companies
 # =========
-company = Company.create!(
+first_company = Company.create!(
   name: 'Acme Inc',
+  country: 'es',
+  sector: 'information_technology',
+  size: 'medium'
+)
+
+second_company = Company.create!(
+  name: 'Flow Inc',
   country: 'es',
   sector: 'information_technology',
   size: 'medium'
@@ -13,12 +20,20 @@ company = Company.create!(
 
 # Users
 # =====
-user = User.create!(
+paco = User.create!(
   email: 'paco@merlo.com',
   first_name: 'Paco',
   last_name: 'Merlo',
   password: PASSWORD,
-  company: company
+  company: first_company
+)
+
+hellen = User.create!(
+  email: 'hellen@flow.com',
+  first_name: 'Hellen',
+  last_name: 'The Admin',
+  password: PASSWORD,
+  company: second_company
 )
 
 # Signups
@@ -28,5 +43,13 @@ Signup.create!(
   first_name: 'Paco',
   last_name: 'Merlo',
   host: 'localhost:3000',
-  user: user
+  user: paco
+)
+
+Signup.create!(
+  email: 'hellen@flow.com',
+  first_name: 'Hellen',
+  last_name: 'The Admin',
+  host: 'localhost:3000',
+  user: hellen
 )

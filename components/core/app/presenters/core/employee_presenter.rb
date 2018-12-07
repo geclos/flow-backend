@@ -3,8 +3,7 @@ module Core
     def serialize
       {
         id: item.id,
-        user_id: item.user_id,
-        form_sent_at: item.form_sent_at
+        user_id: item.user_id
       }
     end
   end

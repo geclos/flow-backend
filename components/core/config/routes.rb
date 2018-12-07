@@ -1,8 +1,14 @@
 Core::Engine.routes.draw do
-  resources :users, only: [:index]
-  resources :employees do
+  resources :campaign_members, only: [:index]
+  resources :campaigns, only: [:index] do
     collection do
-      post :bulk_create
+      post :start
+    end
+
+    member do
+      post :add_employees
     end
   end
+  resources :employees, only: [:index]
+  resources :users, only: [:index]
 end

@@ -9,23 +9,13 @@ module Core
       render json: result
     end
 
-    def bulk_create
-      EmployeeInteractor::BulkCreate.new(
-        author: current_user,
-        company: current_company,
-        emails: emails
-      ).call
-    rescue ActiveRecord::RecordInvalid => e
-      raise_error(e)
-    end
-
     def update
       employee = EmployeeInteractor::Update.new(
         employee: @employee,
         params: employee_params
       ).call
 
-      render json: EmployeePresenter.new(employee)
+      render json: EmployeePresenter.new(employee).serialize
     rescue ActiveRecord::RecordInvalid => e
       raise_model_errors
     end
@@ -52,12 +42,6 @@ module Core
 
     def employees
       EmployeesCollection.new(current_user).filter
-    end
-
-    def raise_error(e)
-      raise exceptions::UnprocessableEntity.new(
-        e.messages
-      )
     end
 
     def raise_model_errors

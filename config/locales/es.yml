@@ -4,3 +4,17 @@ es:
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'
+      models:
+        core/campaign:
+          attributes:
+            company:
+              required: 'company is required'
+            company_id:
+              blank: 'company_id is required'
+
+        core/campaign_member:
+          attributes:
+            campaign:
+              required: 'campaign is required'
+            campaign_id:
+              blank: 'campaign_id is required'

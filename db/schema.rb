@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181201122245) do
+ActiveRecord::Schema.define(version: 20181207212741) do
+
+  create_table "campaign_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.integer "employee_id", null: false
+    t.integer "campaign_id", null: false
+    t.string  "poll_token",  null: false
+    t.index ["campaign_id"], name: "index_campaign_members_on_campaign_id", using: :btree
+    t.index ["employee_id"], name: "index_campaign_members_on_employee_id", using: :btree
+  end
+
+  create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.date    "date"
+    t.integer "revenue_in_cents"
+    t.integer "growth_percentage_in_cents"
+    t.integer "number_of_patents"
+    t.integer "company_id",                 null: false
+    t.index ["company_id"], name: "index_campaigns_on_company_id", using: :btree
+  end
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -24,7 +41,7 @@ ActiveRecord::Schema.define(version: 20181201122245) do
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",      null: false
     t.datetime "form_sent_at"
-    t.string   "poll_token",   null: false
+    t.string   "poll_token"
     t.index ["user_id"], name: "index_employees_on_user_id", using: :btree
   end
 
@@ -69,6 +86,9 @@ ActiveRecord::Schema.define(version: 20181201122245) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "campaign_members", "campaigns"
+  add_foreign_key "campaign_members", "employees"
+  add_foreign_key "campaigns", "companies", on_delete: :cascade
   add_foreign_key "employees", "users", on_delete: :cascade
   add_foreign_key "signups", "users", on_delete: :nullify
   add_foreign_key "users", "companies", on_delete: :cascade

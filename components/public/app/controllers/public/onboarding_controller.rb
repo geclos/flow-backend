@@ -1,7 +1,7 @@
 module Public
   class OnboardingController < ApplicationController
     before_action :fetch_signup, only: [:confirm_signup, :finalize_signup, :finalized]
-    before_action :redirect_to_finalized?, only: [:confirm_signup, :finalize_signup]
+    before_action :redirect_to_finalized, only: [:confirm_signup, :finalize_signup
 
     def create_signup
       signup = SignupInteractor::Create.new(
@@ -20,8 +20,7 @@ module Public
 
     def confirm_signup
       @company = Company.new
-      # TODO: move to config yml
-      @sectors = [
+      @sectors = [ # TODO: move to config yml
         ["Bienes de consumo", "consumer"],
         ["Comercio electrónico", "ecommerce"],
         ["Construcción", "construction"],
@@ -55,9 +54,9 @@ module Public
 
     def finalized
       if !@signup.user || !@signup.user.confirmed?
-        redirect_to :finalized_signup, token: @signup.confirmation_token
+        redirect_to :finalize_signup, token: @signup.confirmation_token
       else
-        redirect_to ENV['APP_DOMAIN']
+        redirect_to ENV['APP_LOCATION']
       end
     end
 
@@ -89,7 +88,7 @@ module Public
       return redirect_to root_url unless @signup.present?
     end
 
-    def redirect_to_finalized?
+    def redirect_to_finalized
       if @signup.user && @signup.user.confirmed?
         redirect_to :finalized, token: @signup.confirmation_token
       end

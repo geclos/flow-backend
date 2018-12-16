@@ -42,7 +42,7 @@ es:
         placeholders:
           email: Email
           password: Password
-        cta: Entrar en Factorial
+        cta: Entrar en Flow
   onboarding:
     confirm:
       email_sent:

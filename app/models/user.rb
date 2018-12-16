@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # =========
   belongs_to :company
   has_one :signup
-  has_one :employee
+  has_one :employee, class_name: 'Core::Employee'
 
   # VALIDATIONS
   # ===========

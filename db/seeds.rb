@@ -4,6 +4,7 @@ PASSWORD='papapa33'
 
 # Companies
 # =========
+puts "creating companies"
 first_company = Company.create!(
   name: 'Acme Inc',
   country: 'es',
@@ -20,6 +21,7 @@ second_company = Company.create!(
 
 # Users
 # =====
+puts "creating users"
 paco = User.create!(
   email: 'paco@merlo.com',
   first_name: 'Paco',
@@ -38,6 +40,7 @@ hellen = User.create!(
 
 # Signups
 # =======
+puts "creating signups"
 Signup.create!(
   email: 'paco@merlo.com',
   first_name: 'Paco',
@@ -53,3 +56,9 @@ Signup.create!(
   host: 'localhost:3000',
   user: hellen
 )
+
+# Employees
+# =========
+puts "creating employees"
+Core::Employee.create!(user: paco)
+Core::Employee.create!(user: hellen)

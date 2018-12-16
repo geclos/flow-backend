@@ -19,11 +19,5 @@ module Core
     def users
       UsersCollection.new(current_user).filter
     end
-
-    def raise_model_errors
-      raise Exceptions::UnprocessableEntity.new(
-        @user.errors.messages
-      )
-    end
   end
 end

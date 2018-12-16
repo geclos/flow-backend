@@ -1,7 +1,7 @@
 module Public
   class OnboardingController < ApplicationController
     before_action :fetch_signup, only: [:confirm_signup, :finalize_signup, :finalized]
-    before_action :redirect_to_finalized, only: [:confirm_signup, :finalize_signup
+    before_action :redirect_to_finalized, only: [:confirm_signup, :finalize_signup]
 
     def create_signup
       signup = SignupInteractor::Create.new(

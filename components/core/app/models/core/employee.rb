@@ -5,6 +5,7 @@ module Core
     # RELATIONS
     # :::::::::
     belongs_to :user
+    has_many :memberships, class_name: 'Core::CampaignMember'
 
     # VALIDATIONS
     # :::::::::

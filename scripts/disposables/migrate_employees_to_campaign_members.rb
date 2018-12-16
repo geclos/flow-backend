@@ -2,7 +2,7 @@ ENV['RAILS_ENV'] = ENV['RAILS_ENV'] || 'production'
 require File.expand_path('../../../config/environment', __FILE__)
 
 Core::Employee.find_each do |employee|
-  next if employee.campaign_memberships.count > 0
+  next if employee.memberships.count > 0
 
   company = employee.user.company
   campaign = company.campaigns&.first

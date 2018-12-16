@@ -1,5 +1,5 @@
 - root = 'notifications/shared'
-- poll_link = ENV['TYPEFORM_LINK'] + "?token=#{@sendee.poll_token}"
+- poll_link = ENV['TYPEFORM_LINK'] + "?token=#{@poll_token}"
 = render partial: "#{root}/header"
 = render partial: "#{root}/paragraph", locals: { content: t("employee_notifier.poll.header") }
 = render partial: "#{root}/paragraph", locals: { content: t("employee_notifier.poll.body_1", sender: @sender.full_name) }

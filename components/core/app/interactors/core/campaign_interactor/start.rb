@@ -45,6 +45,7 @@ module Core
 
       def create_membership!(campaign, employee)
         CampaignMemberInteractor::Create.new(
+          author: @author,
           params: {
             campaign: campaign,
             employee: employee

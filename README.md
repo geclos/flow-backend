@@ -1,24 +1,11 @@
-# README
+# Flow backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is for demonstration purposes.
 
-Things you may want to cover:
+It contains all backend code of a personal project I'm working on in private.
 
-* Ruby version
+## Stack
 
-* System dependencies
+Modularized Ruby on Rails application with MySQL db. Try to follow DDD principles with the use of interactors and services as "use cases" to apply to my domain logic.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Mainly unit tests with some integration tests at the controller level. There's not 100% coverage and do not aspire to it yet; goal is to code fast and iterate quickly.

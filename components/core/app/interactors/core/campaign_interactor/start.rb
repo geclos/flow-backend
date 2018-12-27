@@ -29,29 +29,6 @@ module Core
 
         campaign
       end
-
-      private
-
-      def create_user!(email, company)
-        UserInteractor::Create.new(params: {
-          email: email,
-          company: company
-        }).call
-      end
-
-      def create_employee!(user)
-        EmployeeInteractor::Create.new(params: { user: user }).call
-      end
-
-      def create_membership!(campaign, employee)
-        CampaignMemberInteractor::Create.new(
-          author: @author,
-          params: {
-            campaign: campaign,
-            employee: employee
-          }
-        ).call
-      end
     end
   end
 end

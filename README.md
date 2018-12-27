@@ -6,7 +6,7 @@ It contains all backend code of a personal project I'm working on in private. It
 
 Polls are conducted via Typeform and respondants are identified via unique poll_token attached to their campaign membership.
 
-Goal (not coded yet) is to process all responses and display graphs with munched data from the responses.
+Goal (not coded yet) is to process all responses and display graphs (in [frontend](https://github.com/geclos/flow-frontend)) with munched data from responses.
 
 ## Stack
 

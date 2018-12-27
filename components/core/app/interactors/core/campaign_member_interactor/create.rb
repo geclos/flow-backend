@@ -9,6 +9,7 @@ module Core
       def call
         membership = CampaignMember.create! @params
         send_poll_email!(membership)
+        membership
       end
 
       private

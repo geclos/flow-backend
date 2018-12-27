@@ -3,9 +3,13 @@ require 'rails_helper'
 RSpec.describe Core::CampaignMemberInteractor::Create do
   let(:campaign) { create(:campaign) }
   let(:employee) { create(:employee) }
+  let(:user) { create(:user) }
   let(:params) { {} }
   let(:interactor) do
-    described_class.new(params: params)
+    described_class.new(
+      author: user,
+      params: params
+    )
   end
 
   describe 'class' do

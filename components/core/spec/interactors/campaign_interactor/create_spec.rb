@@ -17,7 +17,7 @@ RSpec.describe Core::CampaignInteractor::Create do
       it "creates a campaign" do
         result = interactor.call
         expect(result).to be_instance_of(Core::Campaign)
-        expect(interactor.call.attributes).to include({
+        expect(result.attributes).to include({
           "company_id" => params[:company_id],
           "date" => params[:date]
         })

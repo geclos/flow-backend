@@ -163,7 +163,7 @@ GEM
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.6)
     rack (2.0.6)
     rack-cors (1.0.2)
     rack-protection (2.0.4)
@@ -294,7 +294,7 @@ DEPENDENCIES
   mysql2 (= 0.4.10)
   notifications!
   public!
-  puma (~> 3.0)
+  puma (~> 3.12)
   rack-cors
   rails (~> 5.0.7)
   rspec-rails

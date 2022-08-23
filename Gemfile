@@ -15,7 +15,7 @@ gem 'notifications', path: 'components/notifications'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7'
 # Use sqlite3 as the database for Active Record
-gem 'mysql2', '0.4.10'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -46,6 +46,8 @@ gem 'rack-cors', require: 'rack/cors'
 
 gem 'sentry-raven'
 
+gem 'nokogiri'
+
 # ===== Sidekiq
 gem 'sidekiq'
 
@@ -66,12 +68,14 @@ group :development do
 
   gem "letter_opener"
   gem 'letter_opener_web', '~> 1.0'
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 
-  gem "capistrano", "~> 3.11", require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem "capistrano"
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

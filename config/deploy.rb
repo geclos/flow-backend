@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "~> 3.17.0"
 
 set :application, "flow-backend"
-set :repo_url, "git@gitlab.com:geclos/flow-backend.git"
+set :repo_url, "git@github.com:geclos/flow-backend.git"
 set :deploy_to, '/srv/backend'
 
 # Don't change these unless you know what you're doing

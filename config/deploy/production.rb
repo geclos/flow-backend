@@ -26,7 +26,7 @@ set :puma_workers,    2
 # Custom SSH Options
 # ==================
  set :ssh_options, {
-    keys: %w(~/.ssh/id_rsa),
+    keys: %w(~/.ssh/id_ed25519),
     forward_agent: true,
     auth_methods: %w(publickey)
  }
